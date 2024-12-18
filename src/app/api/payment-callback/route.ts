@@ -3,7 +3,8 @@ import crypto from 'crypto';
 
 export async function POST(req: NextRequest) {
     const body = await req.json();
-    const { m_operation_id, m_sign, ...params } = body;
+    //m_operation_id,
+    const { m_sign, ...params } = body;
 
     const paramString = Object.values(params).join(':') + process.env.PAYEER_API_SECRET;
 
